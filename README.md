@@ -14,17 +14,24 @@ Examples:
 
 
 
+
 REFerences:
 1. Mat lab confusion matrix
+
    https://www.mathworks.com/help/nnet/ref/plotconfusion.html
+   
    https://www.mathworks.com/help/examples/nnet/win64/PlotConfusionMatrixUsingCategoricalLabelsExample_02.png
 
 
 
-2. Other Examples in python
-  a) https://stackoverflow.com/questions/28200786/how-to-plot-scikit-learn-classification-report
-  b) https://stackoverflow.com/questions/5821125/how-to-plot-confusion-matrix-with-string-axis-rather-than-integer-in-python
-  c) https://www.programcreek.com/python/example/96197/seaborn.heatmap
-  d) https://stackoverflow.com/questions/19233771/sklearn-plot-confusion-matrix-with-labels/31720054
 
+2. Other Examples in python
+
+  a) https://stackoverflow.com/questions/28200786/how-to-plot-scikit-learn-classification-report
+  
+  b) https://stackoverflow.com/questions/5821125/how-to-plot-confusion-matrix-with-string-axis-rather-than-integer-in-python
+  
+  c) https://www.programcreek.com/python/example/96197/seaborn.heatmap
+  
+  d) https://stackoverflow.com/questions/19233771/sklearn-plot-confusion-matrix-with-labels/31720054
 
