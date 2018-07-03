@@ -2,7 +2,7 @@
 """
 plot a pretty confusion matrix with seaborn
 Created on Mon Jun 25 14:17:37 2018
-@author: Wagner Cipriano - wagnerbhbr-gmail
+@author: Wagner Cipriano - wagnerbhbr
 REFerences:
   https://www.mathworks.com/help/nnet/ref/plotconfusion.html
     https://www.mathworks.com/help/examples/nnet/win64/PlotConfusionMatrixUsingCategoricalLabelsExample_02.png
