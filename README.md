@@ -35,3 +35,4 @@ REFerences:
   
   d) https://stackoverflow.com/questions/19233771/sklearn-plot-confusion-matrix-with-labels/31720054
 
+  e) http://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html#sphx-glr-auto-examples-model-selection-plot-confusion-matrix-py
