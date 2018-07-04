@@ -214,7 +214,11 @@ def plot_confusion_matrix_from_data(y_test, predictions, columns=None, annot=Tru
 
     #data
     if(not columns):
-        columns = range(1, len(np.unique(y_test))+1)
+        #labels axis integer:
+        ##columns = range(1, len(np.unique(y_test))+1)
+        #labels axis string:
+        from string import ascii_uppercase
+        columns = ['class %s' %(i) for i in list(ascii_uppercase)[0:len(np.unique(y_test))]]
 
     confm = confusion_matrix(y_test, predictions)
     cmap = 'Oranges';
