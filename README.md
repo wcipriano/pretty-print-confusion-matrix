@@ -10,7 +10,7 @@ This module get a pretty print confusion matrix from a np matrix or from a y_tes
 Examples:
 ![alt text](https://raw.githubusercontent.com/wcipriano/pretty-print-confusion-matrix/master/Screenshots/conf_matrix_default_1.png)
 
-![alt text](https://raw.githubusercontent.com/wcipriano/pretty-print-confusion-matrix/master/Screenshots/conf_matrix_default_2.png)
+![alt text](https://raw.githubusercontent.com/wcipriano/pretty-print-confusion-matrix/master/Screenshots/conf_matrix_default_3.png)
 
 
 
