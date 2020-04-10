@@ -160,13 +160,17 @@ def pretty_plot_confusion_matrix(df_cm, annot=True, cmap="Oranges", fmt='.2f', f
     ax.set_xticklabels(ax.get_xticklabels(), rotation = 45, fontsize = 10)
     ax.set_yticklabels(ax.get_yticklabels(), rotation = 25, fontsize = 10)
 
+    # axis settings: avoiding cutting off edges
+    bottom, top = ax.get_ylim()
+    ax.set_ylim(bottom + 0.5, top - 0.5)
+
     # Turn off all the ticks
     for t in ax.xaxis.get_major_ticks():
-        t.tick1On = False
-        t.tick2On = False
+        t.tick1line.set_visible = False
+        t.tick2line.set_visible = False
     for t in ax.yaxis.get_major_ticks():
-        t.tick1On = False
-        t.tick2On = False
+        t.tick1line.set_visible = False
+        t.tick2line.set_visible = False
 
     #face colors list
     quadmesh = ax.findobj(QuadMesh)[0]
