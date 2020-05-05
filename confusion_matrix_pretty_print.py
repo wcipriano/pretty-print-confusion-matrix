@@ -220,7 +220,7 @@ def plot_confusion_matrix_from_data(y_test, predictions, columns=None, annot=Tru
         from string import ascii_uppercase
         columns = ['class %s' %(i) for i in list(ascii_uppercase)[0:len(np.unique(y_test))]]
 
-    confm = confusion_matrix(y_test, predictions)
+    confm = confusion_matrix(y_test, predictions, labels=columns)
     cmap = 'Oranges';
     fz = 11;
     figsize=[9,9];
