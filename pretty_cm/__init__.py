@@ -71,8 +71,8 @@ def configcell_text_and_colors(array_df, lin, col, oText, facecolors, posi, fz, 
         text_kwargs = dict(color='w', ha="center", va="center", gid='sum', fontproperties=font_prop)
         lis_txt = ['%d'%(cell_val), per_ok_s, '%.2f%%'%(per_err)]
         lis_kwa = [text_kwargs]
-        dic = text_kwargs.copy(); dic['color'] = 'g'; lis_kwa.append(dic)
-        dic = text_kwargs.copy(); dic['color'] = 'r'; lis_kwa.append(dic)
+        dic = text_kwargs.copy(); dic['color'] = '#1EE300'; lis_kwa.append(dic) # green
+        dic = text_kwargs.copy(); dic['color'] = 'r'; lis_kwa.append(dic) # red
         lis_pos = [(oText._x, oText._y-0.3), (oText._x, oText._y), (oText._x, oText._y+0.3)]
         for i in range(len(lis_txt)):
             newText = dict(x=lis_pos[i][0], y=lis_pos[i][1], text=lis_txt[i], kw=lis_kwa[i])
@@ -291,6 +291,6 @@ if(__name__ == '__main__'):
     print('__main__')
     print('_test_cm: test function with confusion matrix done\nand pause')
     _test_cm()
-    plt.pause(5)
+    # plt.pause(5)
     print('_test_data_class: test function with y_test (actual values) and predictions (predic)')
     _test_data_class()
