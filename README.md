@@ -1,10 +1,9 @@
 # Confusion Matrix in Python
-Plot a pretty confusion matrix (like Matlab) in python using seaborn and matplotlib
 
+Plot a pretty confusion matrix (like Matlab) in python using seaborn and matplotlib
 
 Created on Mon Jun 25 14:17:37 2018
 @author: Wagner Cipriano - wagnerbhbr
-
 
 This module get a pretty print confusion matrix from a np matrix or from a y_test and predition values
 
@@ -13,10 +12,16 @@ Examples:
 
 ![alt text](https://raw.githubusercontent.com/wcipriano/pretty-print-confusion-matrix/master/Screenshots/conf_matrix_default_3.png)
 
+## Install
+```bash
+$ pip install -U git+https://github.com/p208p2002/pretty-print-confusion-matrix
+```
+
+## Usage
+https://github.com/p208p2002/pretty-print-confusion-matrix/tree/master/pretty_cm/__init__.py#L290
 
 
-
-REFerences:
+# REFerences:
 1. Mat lab confusion matrix
 
    https://www.mathworks.com/help/nnet/ref/plotconfusion.html

@@ -209,7 +209,7 @@ def pretty_plot_confusion_matrix(df_cm, annot=True, cmap="Oranges", fmt='.2f', f
 #
 
 def plot_confusion_matrix_from_data(y_test, predictions, columns=None, annot=True, cmap="Oranges",
-      fmt='.2f', fz=11, lw=0.5, cbar=False, figsize=[8,8], show_null_values=0, pred_val_axis='lin'):
+      fmt='.2f', fz=11, lw=0.5, cbar=False, figsize=[8,8], show_null_values=0, pred_val_axis='lin', save_name='confusion_matrix.png'):
     """
         plot confusion matrix function with y_test (actual values) and predictions (predic),
         whitout a confusion matrix yet
@@ -231,7 +231,8 @@ def plot_confusion_matrix_from_data(y_test, predictions, columns=None, annot=Tru
     figsize=[9,9]
     show_null_values = 2
     df_cm = DataFrame(confm, index=columns, columns=columns)
-    pretty_plot_confusion_matrix(df_cm, fz=fz, cmap=cmap, figsize=figsize, show_null_values=show_null_values, pred_val_axis=pred_val_axis)
+    pretty_plot_confusion_matrix(df_cm, fz=fz, cmap=cmap, figsize=figsize, \
+        show_null_values=show_null_values, pred_val_axis=pred_val_axis,save_name=save_name)
 #
 
 
@@ -251,7 +252,7 @@ def _test_cm():
     df_cm = DataFrame(array, index=range(1,7), columns=range(1,7))
     #colormap: see this and choose your more dear
     cmap = 'PuRd'
-    pretty_plot_confusion_matrix(df_cm, cmap=cmap)
+    pretty_plot_confusion_matrix(df_cm, cmap=cmap,save_name='_test_cm.png')
 #
 
 def _test_data_class():
@@ -265,7 +266,7 @@ def _test_data_class():
         actual: 2 and prediction 4   >>  1
         actual: 3 and prediction 4   >>  10
     """
-    columns = []
+    columns = ['a','b','c','d','e']
     annot = True
     cmap = 'Oranges'
     fmt = '.2f'
@@ -279,7 +280,7 @@ def _test_data_class():
     if(len(y_test) > 10):
         fz=9; figsize=[14,14]
     plot_confusion_matrix_from_data(y_test, predic, columns,
-      annot, cmap, fmt, fz, lw, cbar, figsize, show_null_values, pred_val_axis)
+      annot, cmap, fmt, fz, lw, cbar, figsize, show_null_values, pred_val_axis, save_name='_test_data_class.png')
 #
 
 
