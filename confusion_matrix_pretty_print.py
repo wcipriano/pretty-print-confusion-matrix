@@ -35,7 +35,7 @@ def configcell_text_and_colors(array_df, lin, col, oText, facecolors, posi, fz, 
       and return text elements to add and to dell
       @TODO: use fmt
     """
-    text_add = []; text_del = [];
+    text_add = []; text_del = []
     cell_val = array_df[lin][col]
     tot_all = array_df[-1][-1]
     per = (float(cell_val) / tot_all) * 100
@@ -71,8 +71,8 @@ def configcell_text_and_colors(array_df, lin, col, oText, facecolors, posi, fz, 
         text_kwargs = dict(color='w', ha="center", va="center", gid='sum', fontproperties=font_prop)
         lis_txt = ['%d'%(cell_val), per_ok_s, '%.2f%%'%(per_err)]
         lis_kwa = [text_kwargs]
-        dic = text_kwargs.copy(); dic['color'] = 'g'; lis_kwa.append(dic);
-        dic = text_kwargs.copy(); dic['color'] = 'r'; lis_kwa.append(dic);
+        dic = text_kwargs.copy(); dic['color'] = 'g'; lis_kwa.append(dic)
+        dic = text_kwargs.copy(); dic['color'] = 'r'; lis_kwa.append(dic)
         lis_pos = [(oText._x, oText._y-0.3), (oText._x, oText._y), (oText._x, oText._y+0.3)]
         for i in range(len(lis_txt)):
             newText = dict(x=lis_pos[i][0], y=lis_pos[i][1], text=lis_txt[i], kw=lis_kwa[i])
@@ -125,7 +125,7 @@ def insert_totals(df_cm):
 #
 
 def pretty_plot_confusion_matrix(df_cm, annot=True, cmap="Oranges", fmt='.2f', fz=11,
-      lw=0.5, cbar=False, figsize=[8,8], show_null_values=0, pred_val_axis='y'):
+      lw=0.5, cbar=False, figsize=[8,8], show_null_values=0, pred_val_axis='y',show_plt=False,save_name='confusion_matrix.png'):
     """
       print conf matrix with default layout (like matlab)
       params:
@@ -174,11 +174,11 @@ def pretty_plot_confusion_matrix(df_cm, annot=True, cmap="Oranges", fmt='.2f', f
 
     #iter in text elements
     array_df = np.array( df_cm.to_records(index=False).tolist() )
-    text_add = []; text_del = [];
+    text_add = []; text_del = []
     posi = -1 #from left to right, bottom to top.
     for t in ax.collections[0].axes.texts: #ax.texts:
         pos = np.array( t.get_position()) - [0.5,0.5]
-        lin = int(pos[1]); col = int(pos[0]);
+        lin = int(pos[1]); col = int(pos[0])
         posi += 1
         #print ('>>> pos: %s, posi: %s, val: %s, txt: %s' %(pos, posi, array_df[lin][col], t.get_text()))
 
@@ -200,7 +200,12 @@ def pretty_plot_confusion_matrix(df_cm, annot=True, cmap="Oranges", fmt='.2f', f
     ax.set_xlabel(xlbl)
     ax.set_ylabel(ylbl)
     plt.tight_layout()  #set layout slim
-    plt.show()
+    
+    plt.savefig(save_name)
+
+    if(show_plt):
+        plt.show()
+
 #
 
 def plot_confusion_matrix_from_data(y_test, predictions, columns=None, annot=True, cmap="Oranges",
@@ -213,7 +218,7 @@ def plot_confusion_matrix_from_data(y_test, predictions, columns=None, annot=Tru
     from pandas import DataFrame
 
     #data
-    if(not columns):
+    if(columns is None):
         #labels axis integer:
         ##columns = range(1, len(np.unique(y_test))+1)
         #labels axis string:
@@ -221,9 +226,9 @@ def plot_confusion_matrix_from_data(y_test, predictions, columns=None, annot=Tru
         columns = ['class %s' %(i) for i in list(ascii_uppercase)[0:len(np.unique(y_test))]]
 
     confm = confusion_matrix(y_test, predictions)
-    cmap = 'Oranges';
-    fz = 11;
-    figsize=[9,9];
+    cmap = 'Oranges'
+    fz = 11
+    figsize=[9,9]
     show_null_values = 2
     df_cm = DataFrame(confm, index=columns, columns=columns)
     pretty_plot_confusion_matrix(df_cm, fz=fz, cmap=cmap, figsize=figsize, show_null_values=show_null_values, pred_val_axis=pred_val_axis)
@@ -261,18 +266,18 @@ def _test_data_class():
         actual: 3 and prediction 4   >>  10
     """
     columns = []
-    annot = True;
-    cmap = 'Oranges';
+    annot = True
+    cmap = 'Oranges'
     fmt = '.2f'
     lw = 0.5
     cbar = False
     show_null_values = 2
     pred_val_axis = 'y'
     #size::
-    fz = 12;
-    figsize = [9,9];
+    fz = 12
+    figsize = [9,9]
     if(len(y_test) > 10):
-        fz=9; figsize=[14,14];
+        fz=9; figsize=[14,14]
     plot_confusion_matrix_from_data(y_test, predic, columns,
       annot, cmap, fmt, fz, lw, cbar, figsize, show_null_values, pred_val_axis)
 #
@@ -288,4 +293,3 @@ if(__name__ == '__main__'):
     plt.pause(5)
     print('_test_data_class: test function with y_test (actual values) and predictions (predic)')
     _test_data_class()
-
