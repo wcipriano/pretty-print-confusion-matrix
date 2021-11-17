@@ -9,7 +9,10 @@ Created on Mon Jun 25 14:17:37 2018
 This module get a pretty print confusion matrix from a NumPy matrix or from 2 NumPy arrays (`y_test` and `predictions`).
 
 ## Installation
+```bash
 pip install pretty-confusion-matrix
+```
+
 ## Get Started
 
 Examples:
