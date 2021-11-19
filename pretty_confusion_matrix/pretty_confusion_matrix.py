@@ -272,7 +272,6 @@ def pp_matrix_from_data(
         ]
 
     confm = confusion_matrix(y_test, predictions)
-    cmap = "Oranges"
     fz = 11
     figsize = [9, 9]
     show_null_values = 2
