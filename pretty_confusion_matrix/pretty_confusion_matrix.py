@@ -272,9 +272,6 @@ def pp_matrix_from_data(
         ]
 
     confm = confusion_matrix(y_test, predictions)
-    fz = 11
-    figsize = [9, 9]
-    show_null_values = 2
     df_cm = DataFrame(confm, index=columns, columns=columns)
     pp_matrix(
         df_cm,
