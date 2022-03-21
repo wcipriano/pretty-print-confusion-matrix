@@ -240,6 +240,8 @@ def pp_matrix(
     plt.tight_layout()  # set layout slim
     plt.show()
 
+    return fig
+
 
 def pp_matrix_from_data(
     y_test,
