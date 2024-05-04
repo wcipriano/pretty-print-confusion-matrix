@@ -7,10 +7,6 @@ repos:
     rev: 3.8.4
     hooks:
     - id: flake8
--   repo: https://github.com/timothycrosley/isort
-    rev: 5.7.0
-    hooks:
-    -   id: isort
 - repo: https://github.com/kynan/nbstripout
   rev: 0.5.0
   hooks:
