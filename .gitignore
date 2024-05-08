@@ -1,2 +1,6 @@
 __pycache__
 dist
+.venv/
+.idea
+bkp/*
+*-local-*
