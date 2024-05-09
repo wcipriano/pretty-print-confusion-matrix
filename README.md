@@ -14,7 +14,7 @@ pip install pretty-confusion-matrix
 
 ## Get Started
 
-Examples:
+### Plotting from DataFrame:
 ```python
 import numpy as np
 import pandas as pd
@@ -35,6 +35,10 @@ pp_matrix(df_cm, cmap=cmap)
 ```
 ![alt text](https://raw.githubusercontent.com/khuyentran1401/pretty-print-confusion-matrix/master/Screenshots/Conf_matrix_default.png)
 
+
+### Plotting from vectors
+
+
 ```python
 import numpy as np
 from pretty_confusion_matrix import pp_matrix_from_data
@@ -48,6 +52,34 @@ pp_matrix_from_data(y_test, predic)
 ```
 
 ![alt text](https://raw.githubusercontent.com/khuyentran1401/pretty-print-confusion-matrix/master/Screenshots/Conf_matrix_default_2.png)
+
+
+## Using custom labels in axis
+You can customize the labels in axis, whether by DataFrame or vectors.
+
+### From DataFrame
+To plot the matrix with text labels in axis rather than integer, change the params `index` and `columns` of your dataframe.
+Getting the example one above, just change the line `df_cm = pd.DataFrame(array, index=range(1, 7), columns=range(1, 7))` by
+```python
+col = ['Dog', 'Cat', 'Mouse', 'Fox', 'Bird', 'Chicken']
+df_cm = pd.DataFrame(array, index=col, columns=col)
+```
+It'll replace the integer labels (**1...6**) in the axis, by **Dog, Cat, Mouse**, and so on..
+
+
+### From vectors
+It's very similar, in this case you just need to use the `columns` param like the example below.
+This param is a positional array, i.e., the order must be the same of the data representation. 
+In this example _Dog_ will be assigned to the class 0, _Cat_ will be assigned to the class 1, and so on and so forth.
+Getting the example two above, just change the line `pp_matrix_from_data(y_test, predic)`, by
+```python
+columns = ['Dog', 'Cat', 'Mouse', 'Fox', 'Bird'] 
+pp_matrix_from_data(y_test, predic, columns)
+```
+It'll replace "class A, ..., class E" in the axis, by **Dog, Cat, ..., Bird**.
+
+More information about "_How to plot confusion matrix with string axis rather than integer in python_" in [this Stackoverflow answer](https://stackoverflow.com/a/51176855/1809554).
+
 
 
 ## Choosing Colormaps
