@@ -50,6 +50,20 @@ pp_matrix_from_data(y_test, predic)
 ![alt text](https://raw.githubusercontent.com/khuyentran1401/pretty-print-confusion-matrix/master/Screenshots/Conf_matrix_default_2.png)
 
 
+## Choosing Colormaps
+
+You can choose the layout of the your matrix by a lot of colors options like PuRd, Oranges and more... 
+To customizer your color scheme, use the param cmap of funcion pp_matrix. 
+To see all the colormap available, please do this:
+```python
+from matplotlib import colormaps
+list(colormaps)
+```
+
+More information about Choosing Colormaps in Matplotlib is available [here](https://matplotlib.org/stable/users/explain/colors/colormaps.html).
+
+
+
 
 ## References:
 ### 1. MATLAB confusion matrix:
