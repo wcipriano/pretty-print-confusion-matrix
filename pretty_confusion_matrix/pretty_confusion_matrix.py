@@ -152,6 +152,7 @@ def pp_matrix(
     figsize=[8, 8],
     show_null_values=0,
     pred_val_axis="y",
+    path_to_save_img="",
 ):
     """
     print conf matrix with default layout (like matlab)
@@ -238,7 +239,12 @@ def pp_matrix(
     ax.set_xlabel(xlbl)
     ax.set_ylabel(ylbl)
     plt.tight_layout()  # set layout slim
-    plt.show()
+
+    # save or show the img result
+    if not path_to_save_img:
+        plt.show()
+    else:
+        plt.savefig(path_to_save_img)
 
 
 def pp_matrix_from_data(
@@ -254,6 +260,7 @@ def pp_matrix_from_data(
     figsize=[8, 8],
     show_null_values=0,
     pred_val_axis="lin",
+    path_to_save_img="",
 ):
     """
     plot confusion matrix function with y_test (actual values) and predictions (predic),
@@ -280,4 +287,5 @@ def pp_matrix_from_data(
         figsize=figsize,
         show_null_values=show_null_values,
         pred_val_axis=pred_val_axis,
+        path_to_save_img=path_to_save_img
     )
