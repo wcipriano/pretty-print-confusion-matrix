@@ -153,6 +153,7 @@ def pp_matrix(
     show_null_values=0,
     pred_val_axis="y",
     path_to_save_img="",
+    title="Confusion matrix",
 ):
     """
     print conf matrix with default layout (like matlab)
@@ -197,12 +198,11 @@ def pp_matrix(
     ax.set_yticklabels(ax.get_yticklabels(), rotation=25, fontsize=10)
 
     # Turn off all the ticks
-    for t in ax.xaxis.get_major_ticks():
-        t.tick1On = False
-        t.tick2On = False
-    for t in ax.yaxis.get_major_ticks():
-        t.tick1On = False
-        t.tick2On = False
+    for (tx, ty) in zip(ax.xaxis.get_major_ticks(), ax.yaxis.get_major_ticks()):
+        tx.tick1line.set_visible(False)
+        tx.tick2line.set_visible(False)
+        ty.tick1line.set_visible(False)
+        ty.tick2line.set_visible(False)
 
     # face colors list
     quadmesh = ax.findobj(QuadMesh)[0]
@@ -235,7 +235,7 @@ def pp_matrix(
         ax.text(item["x"], item["y"], item["text"], **item["kw"])
 
     # titles and legends
-    ax.set_title("Confusion matrix")
+    ax.set_title(title)
     ax.set_xlabel(xlbl)
     ax.set_ylabel(ylbl)
     plt.tight_layout()  # set layout slim
@@ -261,6 +261,7 @@ def pp_matrix_from_data(
     show_null_values=0,
     pred_val_axis="lin",
     path_to_save_img="",
+    title="Confusion matrix",
 ):
     """
     plot confusion matrix function with y_test (actual values) and predictions (predic),
@@ -287,5 +288,10 @@ def pp_matrix_from_data(
         figsize=figsize,
         show_null_values=show_null_values,
         pred_val_axis=pred_val_axis,
-        path_to_save_img=path_to_save_img
+        path_to_save_img=path_to_save_img,
+        title=title,
+        annot=annot,
+        fmt=fmt,
+        lw=lw,
+        cbar=cbar
     )
