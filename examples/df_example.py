@@ -18,4 +18,5 @@ array = np.array(
 df_cm = pd.DataFrame(array, index=range(1, 7), columns=range(1, 7))
 # colormap: see this and choose your more dear
 cmap = "PuRd"
-pp_matrix(df_cm, cmap=cmap)
+title = 'Confusion matrix from dataframe'
+pp_matrix(df_cm, cmap=cmap, title=title)
