@@ -8,13 +8,31 @@
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/pretty-confusion-matrix?logo=download)
 
 # Confusion Matrix in Python
-Plot a pretty confusion matrix (like Matlab) in python using seaborn and matplotlib
-
-Created on Mon Jun 25 14:17:37 2018
-@author: Wagner Cipriano - wagnerbhbr
-
+Plot a pretty confusion matrix (like Matlab) in python using seaborn and matplotlib.
 
 This module get a pretty print confusion matrix from a NumPy matrix or from 2 NumPy arrays (`y_test` and `predictions`).
+
+
+## Become a sponsor
+Please, consider contributing it to the project.
+Support the developers who power open source!
+Invest in open source. It powers your world.
+Become a sponsor now!
+
+If my open source projects could bring you closer to your goals and you want to say thank you, and you can contribute, feel free to do [Buy me a ☕](https://buymeacoffee.com/wcipriano) !
+
+Or Become a sponsor directly on [GitHub sponsors page](https://github.com/sponsors/wcipriano?frequency=recurring&) ! 
+You will receive a **sponsor badge** on your profile.
+
+
+I will be really thankfull for anything even if it is a coffee or just a kind comment towards my work, because that helps me a lot. 
+
+See my projects and my contacts in my [Linktree](https://linktr.ee/wagner.cipriano) if you want to stay connected!
+
+
+
+
+
 
 ## Installation
 ```bash
