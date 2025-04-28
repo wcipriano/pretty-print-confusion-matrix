@@ -246,6 +246,8 @@ def pp_matrix(
     else:
         plt.savefig(path_to_save_img)
 
+    return fig
+
 
 def pp_matrix_from_data(
     y_test,
