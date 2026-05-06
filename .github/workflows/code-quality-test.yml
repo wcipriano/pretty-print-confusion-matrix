@@ -9,20 +9,24 @@ on:
       - test-cov-updatedep
 
 env:
+  PYTHON_VERSION: 3.11
   POETRY_VERSION: 2.4.0
   OS: ubuntu-latest
 
 jobs:
   test-cov:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Define the versions you want to test against
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Setup python
+      - name: Setup python ${{ matrix.python-version }}
         uses: actions/setup-python@v6
         with:
-          python-version-file: "pyproject.toml"  # Read python version from a file pyproject.toml
-          # python-version: ${{ matrix.python-version }}
+          python-version: ${{ matrix.python-version }}
       - name: Install poetry
         uses: abatilo/actions-poetry@v4
         with:
@@ -42,10 +46,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Setup python
+      - name: Setup python $PYTHON_VERSION
         uses: actions/setup-python@v6
         with:
-          python-version-file: "pyproject.toml"  # Read python version from a file pyproject.toml
+          python-version: $PYTHON_VERSION
       - name: Install poetry
         uses: abatilo/actions-poetry@v4
         with:
