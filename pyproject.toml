@@ -34,7 +34,7 @@ scikit-learn = [
     {version = "^1.5", python = ">=3.9"},
 ]
 
-[poetry.group.dev.dependencies]
+[tool.poetry.group.dev.dependencies]
 flake8 = "^7.3.0"
 pre-commit = [
     {version = "^4.6.0", python = ">=3.10"},
@@ -46,7 +46,7 @@ black = [
 ]
 pytest = [
     {version = "^9.0.3", python = ">=3.10"},
-    {version = "^8.4", python = "<3.10"},
+    {version = "^8.4.2", python = "<3.10"},
 ]
 pytest-cov = "^7.1.0"
 
