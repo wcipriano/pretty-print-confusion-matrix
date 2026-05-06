@@ -1,6 +1,6 @@
 # This workflow will test and check quality of the code
 
-name: test-and-code-quality
+name: Tests
 
 on:
   push:
