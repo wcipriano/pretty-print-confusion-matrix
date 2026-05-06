@@ -2,11 +2,11 @@
 
 name: test-and-code-quality
 
-on: workflow_dispatch
-#  push:
-#    branches:
-#      - master
-#      - test-cov-updatedep
+on:
+  push:
+    branches:
+      - master
+      - test-cov-updatedep
 
 env:
   POETRY_VERSION: 2.1.1
@@ -27,8 +27,8 @@ jobs:
         uses: abatilo/actions-poetry@v4
         with:
           poetry-version: $POETRY_VERSION
-      - name: Install dependencies
-        run: Install the project dependencies
+      - name: Install the project dependencies
+        run: poetry install
       - name: Run tests
         run: poetry run pytest --cov=./ --cov-branch --cov-report=xml
       - name: Upload coverage reports to Codecov
