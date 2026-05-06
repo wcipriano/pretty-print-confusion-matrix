@@ -3,6 +3,7 @@
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg?logo=codeclimate&logoColor=%23FFFFFF"></a>
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/pretty-confusion-matrix)
 <a href="https://libraries.io/pypi/pretty-confusion-matrix"><img alt="GitHub Repo stars" src="https://img.shields.io/librariesio/github/wcipriano/pretty-print-confusion-matrix"></a>
+[![codecov](https://codecov.io/github/wcipriano/pretty-print-confusion-matrix/graph/badge.svg?token=WD9AUE9WK5)](https://codecov.io/github/wcipriano/pretty-print-confusion-matrix)
 <a href="https://github.com/wcipriano"><img alt="GitHub Repo stars" src="https://img.shields.io/github/license/wcipriano/pretty-print-confusion-matrix?logo=apache"></a>
 <a href="https://github.com/wcipriano/pretty-print-confusion-matrix/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/stars/wcipriano/pretty-print-confusion-matrix?style=flat&logo=github"></a>
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/pretty-confusion-matrix?logo=download)
