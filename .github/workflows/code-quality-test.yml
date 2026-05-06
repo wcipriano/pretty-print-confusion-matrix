@@ -2,11 +2,11 @@
 
 name: test-and-code-quality
 
-on:
-  push:
-    branches:
-      - master
-      - test-cov-updatedep
+on: workflow_dispatch
+#  push:
+#    branches:
+#      - master
+#      - test-cov-updatedep
 
 env:
   POETRY_VERSION: "2.1.1"
