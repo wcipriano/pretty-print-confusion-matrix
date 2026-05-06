@@ -1,6 +1,6 @@
 # This workflow will test and check quality of the code
 
-name: test-and-code-quality
+name: Tests
 
 on:
   push:
@@ -9,20 +9,23 @@ on:
       - test-cov-updatedep
 
 env:
+  PYTHON_VERSION: 3.11
   POETRY_VERSION: 2.4.0
-  OS: ubuntu-latest
 
 jobs:
   test-cov:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Define the versions you want to test against
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Setup python
+      - name: Setup python ${{ matrix.python-version }}
         uses: actions/setup-python@v6
         with:
-          python-version-file: "pyproject.toml"  # Read python version from a file pyproject.toml
-          # python-version: ${{ matrix.python-version }}
+          python-version: ${{ matrix.python-version }}
       - name: Install poetry
         uses: abatilo/actions-poetry@v4
         with:
@@ -35,7 +38,6 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          verbose: true
 
   code-quality:
     runs-on: ubuntu-latest
@@ -45,7 +47,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v6
         with:
-          python-version-file: "pyproject.toml"  # Read python version from a file pyproject.toml
+          python-version: "3.11"
       - name: Install poetry
         uses: abatilo/actions-poetry@v4
         with:
