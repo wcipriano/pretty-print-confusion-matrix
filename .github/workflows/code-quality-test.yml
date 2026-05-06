@@ -9,7 +9,7 @@ on:
       - test-cov-updatedep
 
 env:
-#  PYTHON_VERSION: 3.11
+  PYTHON_VERSION: 3.11
   POETRY_VERSION: 2.4.0
 
 jobs:
@@ -47,7 +47,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
+          python-version: "$PYTHON_VERSION"
       - name: Install poetry
         uses: abatilo/actions-poetry@v4
         with:
