@@ -14,7 +14,7 @@ env:
 
 jobs:
   test-cov:
-    runs-on: $OS
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -38,7 +38,7 @@ jobs:
           verbose: true
 
   code-quality:
-    runs-on: $OS
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
