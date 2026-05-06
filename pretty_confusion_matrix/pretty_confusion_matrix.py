@@ -62,7 +62,7 @@ def configcell_text_and_colors(
         else:
             per_ok = per_err = 0
 
-        per_ok_s = ["%.2f%%" % (per_ok), "100%"][per_ok == 100]
+        per_ok_s = "%.2f%%" % (per_ok) if per_ok != 100 else "100%"
 
         # text to DEL
         text_del.append(oText)
@@ -198,7 +198,7 @@ def pp_matrix(
     ax.set_yticklabels(ax.get_yticklabels(), rotation=25, fontsize=10)
 
     # Turn off all the ticks
-    for (tx, ty) in zip(ax.xaxis.get_major_ticks(), ax.yaxis.get_major_ticks()):
+    for tx, ty in zip(ax.xaxis.get_major_ticks(), ax.yaxis.get_major_ticks()):
         tx.tick1line.set_visible(False)
         tx.tick2line.set_visible(False)
         ty.tick1line.set_visible(False)
@@ -293,5 +293,5 @@ def pp_matrix_from_data(
         annot=annot,
         fmt=fmt,
         lw=lw,
-        cbar=cbar
+        cbar=cbar,
     )

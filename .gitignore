@@ -5,3 +5,5 @@ dist
 bkp/*
 *-local-*
 matrix-output-*
+coverage.xml
+.coverage

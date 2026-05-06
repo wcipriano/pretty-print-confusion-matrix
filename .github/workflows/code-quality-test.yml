@@ -1,0 +1,64 @@
+# This workflow will test and check quality of the code
+
+name: test-and-code-quality
+
+on:
+  push:
+    branches:
+      - master
+      - test-cov-updatedep
+
+env:
+  POETRY_VERSION: 2.4.0
+  OS: ubuntu-latest
+
+jobs:
+  test-cov:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup python
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: "pyproject.toml"  # Read python version from a file pyproject.toml
+          # python-version: ${{ matrix.python-version }}
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v4
+        with:
+          poetry-version: $POETRY_VERSION
+      - name: Install the project dependencies
+        run: poetry install
+      - name: Run tests
+        run: poetry run pytest --cov=./ --cov-branch --cov-report=xml
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
+
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup python
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: "pyproject.toml"  # Read python version from a file pyproject.toml
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v4
+        with:
+          poetry-version: $POETRY_VERSION
+      - name: Install dependencies
+        run: poetry install
+      - name: Run black
+        run: poetry run black . --check
+      #- name: Run isort
+      #  run: poetry run isort . --check-only
+      #- name: Run flake8
+      #  run: poetry run flake8 .
+      #- name: Run bandit
+      #  run: poetry run bandit .
+      #- name: Run saftey
+      #  run: poetry run safety check
