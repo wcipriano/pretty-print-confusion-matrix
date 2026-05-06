@@ -1,9 +1,12 @@
-[tool.poetry]
+[project]
 name = "pretty-confusion-matrix"
 version = "0.6.0"
 description = "plot a pretty confusion matrix (like Matlab) in python using seaborn and matplotlib"
 repository = "https://github.com/wcipriano/pretty-print-confusion-matrix"
-authors = ["Wagner Cipriano <wagnao@gmail.com>", "Khuyen Tran <khuyentran1476@gmail.com>"]
+authors = [
+    { name = "Wagner Cipriano", email = "wagnao@gmail.com" },
+    { name = "Khuyen Tran", email = "khuyentran1476@gmail.com" }
+]
 keywords = ["confusion matrix"]
 readme = "README.md"
 
@@ -14,13 +17,15 @@ download = "https://pypi.org/project/pretty-confusion-matrix/#files"
 tracker = "https://github.com/wcipriano/pretty-print-confusion-matrix/issues"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.12"
+python = ">=3.9,<3.14"
 numpy = [
     {version = "^2.0.0", python = ">=3.9"},
 ]
 matplotlib = [
-    {version = "^3.9.0", python = ">=3.9"},
+    {version = "^3.10.9", python = ">=3.10"},
+    {version = "^3.9.4", python = "<3.10"},
 ]
+
 seaborn = "^0.13.2"
 pandas = [
     {version = "^2.2.2", python = ">=3.9"},
@@ -29,10 +34,21 @@ scikit-learn = [
     {version = "^1.5", python = ">=3.9"},
 ]
 
-[tool.poetry.dev-dependencies]
-pre-commit = "^3.5.0"
-black = "^24.4.2"
-flake8 = "^5.0.4"
+[poetry.group.dev.dependencies]
+flake8 = "^7.3.0"
+pre-commit = [
+    {version = "^4.6.0", python = ">=3.10"},
+    {version = "^4.3.0", python = "<3.10"},
+]
+black = [
+    {version = "^26.3.1", python = ">=3.10"},
+    {version = "^24.10.0", python = "<3.10"},
+]
+pytest = [
+    {version = "^9.0.3", python = ">=3.10"},
+    {version = "^8.4", python = "<3.10"},
+]
+pytest-cov = "^7.1.0"
 
 [build-system]
 requires = ["poetry-core"]
