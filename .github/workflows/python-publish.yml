@@ -58,7 +58,7 @@ jobs:
       #
       # ALTERNATIVE: if your GitHub Release name is the PyPI project version string
       # ALTERNATIVE: exactly, uncomment the following line instead:
-      url: https://test.pypi.org/project/pretty-confusion-matrix/${{ github.event.release.name }}
+      url: https://test.pypi.org/project/pretty-confusion-matrix/${{ github.event.release.tag_name }}
 
     steps:
       - name: Retrieve release distributions
@@ -72,4 +72,5 @@ jobs:
         with:
           packages-dir: dist/
           verbose: true
-          repository-url: https://test.pypi.org/project/pretty-confusion-matrix/
+#          repository-url: https://test.pypi.org/project/pretty-confusion-matrix/
+          repository-url: https://test.pypi.org/legacy/
