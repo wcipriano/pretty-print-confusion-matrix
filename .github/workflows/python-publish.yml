@@ -39,7 +39,8 @@ jobs:
           name: release-dists
           path: dist/
 
-  pypi-publish:
+  test-pypi-publish:
+    if: github.event.release.target_commitish == 'deploy-test-pypi'
     runs-on: ubuntu-latest
     needs:
       - release-build
@@ -51,20 +52,42 @@ jobs:
     environment:
       name: testpypi
       # OPTIONAL: uncomment and update to include your PyPI project URL in the deployment status:
-      # url: https://test.pypi.org/project/pretty-confusion-matrix/
+      url: https://test.pypi.org/project/pretty-confusion-matrix/
       #
       # ALTERNATIVE: if your GitHub Release name is the PyPI project version string
       # ALTERNATIVE: exactly, uncomment the following line instead:
-      url: https://test.pypi.org/project/pretty-confusion-matrix/${{ github.event.release.tag_name }}
+      # url: https://test.pypi.org/project/pretty-confusion-matrix/${{ github.event.release.tag_name }}
     steps:
       - name: Retrieve release distributions
         uses: actions/download-artifact@v4
         with:
           name: release-dists
           path: dist/
-      - name: Publish release distributions to PyPI
+      - name: Publish release to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
           verbose: true
           repository-url: https://test.pypi.org/legacy/
+
+  pypi-publish:
+    if: github.event.release.target_commitish == 'master'
+    runs-on: ubuntu-latest
+    needs:
+      - release-build
+    permissions:
+      id-token: write
+    environment:
+      name: pypi
+      url: https://pypi.org/project/pretty-confusion-matrix
+    steps:
+      - name: Retrieve release distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: release-dists
+          path: dist/
+      - name: Publish release to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/
+          verbose: true
