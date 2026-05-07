@@ -1,6 +1,6 @@
 [project]
 name = "pretty-confusion-matrix"
-version = "0.7.0"
+version = "0.7.2"
 description = "plot a pretty confusion matrix (like Matlab) in python using seaborn and matplotlib"
 repository = "https://github.com/wcipriano/pretty-print-confusion-matrix"
 authors = [
