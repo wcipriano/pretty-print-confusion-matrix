@@ -5,7 +5,7 @@ name: Upload Python Package
 
 on:
   release:
-    types: [published]
+    types: [published, edited]
 
 permissions:
   contents: read
