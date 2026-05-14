@@ -8,6 +8,7 @@
 <a href="https://github.com/wcipriano"><img alt="GitHub Repo stars" src="https://img.shields.io/github/license/wcipriano/pretty-print-confusion-matrix?logo=apache"></a>
 <a href="https://github.com/wcipriano/pretty-print-confusion-matrix/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/stars/wcipriano/pretty-print-confusion-matrix?style=flat&logo=github"></a>
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/pretty-confusion-matrix?logo=download)
+[![DOI](https://zenodo.org/badge/139605798.svg)](https://doi.org/10.5281/zenodo.20187025)
 
 # Confusion Matrix in Python
 Plot a pretty confusion matrix (like Matlab) in python using seaborn and matplotlib.
