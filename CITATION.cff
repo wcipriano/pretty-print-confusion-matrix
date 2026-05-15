@@ -4,21 +4,22 @@ message: "If you use this software, please cite it as below."
 authors:
   - family-names: "Cipriano"
     given-names: "Wagner"
+    orcid: "https://orcid.org/0000-0002-3927-1057"
   - family-names: "Tran"
     given-names: "Khuyen"
   - family-names: "Yadav"
     given-names: "Nitesh"
 abstract: "PPCM is a software module for obtaining a Pretty Print Confusion Matrix from a numpy array or from two numpy arrays (true and predicted values)."
 doi: 10.5281/zenodo.20187026
-license: "Apache License 2.0"
+license: Apache-2.0
 license-url: "https://github.com/wcipriano/pretty-print-confusion-matrix/blob/master/LICENSE"
 repository-code: "https://github.com/wcipriano/pretty-print-confusion-matrix"
 keywords:
-  - confusion matrix
+  - "confusion matrix"
   - python
   - plot
-  - data science
-  - data visualization
-  - machine-learning
+  - "data science"
+  - "data visualization"
+  - "machine learning"
 type: software
 url: "https://pypi.org/project/pretty-confusion-matrix/"
