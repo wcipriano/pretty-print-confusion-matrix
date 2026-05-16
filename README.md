@@ -4,9 +4,9 @@
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/pretty-confusion-matrix)
 <a href="https://libraries.io/pypi/pretty-confusion-matrix"><img alt="GitHub Repo stars" src="https://img.shields.io/librariesio/github/wcipriano/pretty-print-confusion-matrix"></a>
 [![codecov](https://codecov.io/github/wcipriano/pretty-print-confusion-matrix/graph/badge.svg?token=WD9AUE9WK5)](https://codecov.io/github/wcipriano/pretty-print-confusion-matrix)
-![Tests](https://github.com/wcipriano/pretty-print-confusion-matrix/workflows/Tests/badge.svg)
-<a href="https://github.com/wcipriano"><img alt="GitHub Repo stars" src="https://img.shields.io/github/license/wcipriano/pretty-print-confusion-matrix?logo=apache"></a>
-<a href="https://github.com/wcipriano/pretty-print-confusion-matrix/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/stars/wcipriano/pretty-print-confusion-matrix?style=flat&logo=github"></a>
+<a href="https://github.com/wcipriano/pretty-print-confusion-matrix/actions/workflows/code-quality-test.yml"><img alt="Tests pipeline: code quality and tests" src="https://github.com/wcipriano/pretty-print-confusion-matrix/workflows/Tests/badge.svg"></a>
+<a href="https://github.com/wcipriano/pretty-print-confusion-matrix/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/wcipriano/pretty-print-confusion-matrix?logo=apache"></a>
+<a href="https://github.com/wcipriano/pretty-print-confusion-matrix/stargazers"><img alt="GitHub repo stars" src="https://img.shields.io/github/stars/wcipriano/pretty-print-confusion-matrix?style=flat&logo=trustpilot"></a>
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/pretty-confusion-matrix?logo=download)
 [![DOI](https://zenodo.org/badge/139605798.svg)](https://doi.org/10.5281/zenodo.20187025)
 
