@@ -154,6 +154,7 @@ def pp_matrix(
     pred_val_axis="y",
     path_to_save_img="",
     title="Confusion matrix",
+    **kwargs
 ):
     """
     print conf matrix with default layout (like matlab)
@@ -183,6 +184,7 @@ def pp_matrix(
 
     ax = sn.heatmap(
         df_cm,
+        **kwargs,
         annot=annot,
         annot_kws={"size": fz},
         linewidths=lw,
@@ -191,6 +193,7 @@ def pp_matrix(
         cmap=cmap,
         linecolor="w",
         fmt=fmt,
+        
     )
 
     # set ticklabels rotation
