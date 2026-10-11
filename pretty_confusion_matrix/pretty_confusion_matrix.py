@@ -39,7 +39,10 @@ def configcell_text_and_colors(
     text_del = []
     cell_val = array_df[lin][col]
     tot_all = array_df[-1][-1]
-    per = (float(cell_val) / tot_all) * 100
+    if tot_all != 0:
+        per = (float(cell_val) / tot_all) * 100
+    else:
+        per = 0
     curr_column = array_df[:, col]
     ccl = len(curr_column)
 
@@ -62,7 +65,7 @@ def configcell_text_and_colors(
         else:
             per_ok = per_err = 0
 
-        per_ok_s = ["%.2f%%" % (per_ok), "100%"][per_ok == 100]
+        per_ok_s = "100%" if per_ok == 100 else "%.2f%%" % (per_ok)
 
         # text to DEL
         text_del.append(oText)
